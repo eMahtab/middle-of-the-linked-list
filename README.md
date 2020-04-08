@@ -40,17 +40,18 @@ The number of nodes in the given list will be between 1 and 100
 class Solution {
     public ListNode middleNode(ListNode head) {
         if(head == null)
-            return head;
+            return null;
         int size = 0;
-        ListNode temp = head;
-        while(head != null){
+        ListNode current = head;
+        while(current != null) {
             size++;
-            head = head.next;
+            current = current.next;
         }
-        for(int i = 0; i < size/2; i++){
-            temp = temp.next;
+        current = head;
+        for(int i = 1; i <= size / 2; i++){
+            current = current.next;
         }
-        return temp;
+        return current;
     }
 }
 ```
