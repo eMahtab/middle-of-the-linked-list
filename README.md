@@ -1,4 +1,5 @@
 # Middle of the Linked List
+
 ## https://leetcode.com/problems/middle-of-the-linked-list
 
 Given a non-empty, singly linked list with head node head, return a middle node of linked list.
@@ -56,9 +57,11 @@ class Solution {
 }
 ```
 
-**Implementation 2 : Fast and Slow Pointer**
+## Implementation 2 : Fast and Slow Pointer
+
 When traversing the list with a pointer slow, make another pointer fast that traverses twice as fast. 
 When fast reaches the end of the list, slow must be in the middle.
+
 
 ```java
 /**
@@ -88,7 +91,7 @@ class Solution {
 
 **Complexity Analysis : **
 ```
-Time Complexity: O(N)O(N), where NN is the number of nodes in the given list.
+Time Complexity: O(N), where NN is the number of nodes in the given list.
 
-Space Complexity: O(1)O(1), the space used by slow and fast.
+Space Complexity: O(1), the space used by slow and fast.
 ```
