@@ -26,7 +26,7 @@ Since the list has two middle nodes with values 3 and 4, we return the second on
 
 The number of nodes in the given list will be between 1 and 100
 
-## Implementation :
+## Implementation 1 : First calculate size of list
 
 ```java
 /**
@@ -54,4 +54,41 @@ class Solution {
         return current;
     }
 }
+```
+
+**Implementation 2 : Fast and Slow Pointer**
+When traversing the list with a pointer slow, make another pointer fast that traverses twice as fast. 
+When fast reaches the end of the list, slow must be in the middle.
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        if(head == null)
+            return head;
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+}
+```
+
+**Complexity Analysis : **
+```
+Time Complexity: O(N)O(N), where NN is the number of nodes in the given list.
+
+Space Complexity: O(1)O(1), the space used by slow and fast.
 ```
